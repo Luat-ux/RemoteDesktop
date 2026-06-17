@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RemoteDesktop")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5031d7c840f609301174fe6e3b5924cba9a01048")]
 [assembly: System.Reflection.AssemblyProductAttribute("RemoteDesktop")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RemoteDesktop")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\RemoteDesktop_Fixed\\RemoteDesktop.csproj": {}
+    "D:\\RemoteDesktop\\RemoteDesktop.csproj": {}
   },
   "projects": {
-    "D:\\RemoteDesktop_Fixed\\RemoteDesktop.csproj": {
+    "D:\\RemoteDesktop\\RemoteDesktop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\RemoteDesktop_Fixed\\RemoteDesktop.csproj",
+        "projectUniqueName": "D:\\RemoteDesktop\\RemoteDesktop.csproj",
         "projectName": "RemoteDesktop",
-        "projectPath": "D:\\RemoteDesktop_Fixed\\RemoteDesktop.csproj",
+        "projectPath": "D:\\RemoteDesktop\\RemoteDesktop.csproj",
         "packagesPath": "C:\\Users\\LUAT\\.nuget\\packages\\",
-        "outputPath": "D:\\RemoteDesktop_Fixed\\obj\\",
+        "outputPath": "D:\\RemoteDesktop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -68,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.315/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
