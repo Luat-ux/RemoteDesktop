@@ -12,146 +12,173 @@ namespace RemoteDesktop.Forms
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
-            this.lblTitle         = new System.Windows.Forms.Label();
-            this.lblQuality       = new System.Windows.Forms.Label();
-            this.cboQuality       = new System.Windows.Forms.ComboBox();
-            this.lblQualityHint   = new System.Windows.Forms.Label();
-            this.lblFps           = new System.Windows.Forms.Label();
-            this.trackFps         = new System.Windows.Forms.TrackBar();
-            this.lblFpsValue      = new System.Windows.Forms.Label();
-            this.lblPort          = new System.Windows.Forms.Label();
-            this.txtPort          = new System.Windows.Forms.TextBox();
-            this.btnSave          = new System.Windows.Forms.Button();
-            this.btnCancel        = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.trackFps)).BeginInit();
-            this.SuspendLayout();
-
+            lblTitle = new Label();
+            lblQuality = new Label();
+            cboQuality = new ComboBox();
+            lblQualityHint = new Label();
+            lblFps = new Label();
+            trackFps = new TrackBar();
+            lblFpsValue = new Label();
+            lblPort = new Label();
+            txtPort = new TextBox();
+            btnSave = new Button();
+            btnCancel = new Button();
+            ((System.ComponentModel.ISupportInitialize)trackFps).BeginInit();
+            SuspendLayout();
+            // 
             // lblTitle
-            this.lblTitle.AutoSize  = false;
-            this.lblTitle.Dock      = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font      = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
-            this.lblTitle.Location  = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name      = "lblTitle";
-            this.lblTitle.Size      = new System.Drawing.Size(360, 44);
-            this.lblTitle.TabIndex  = 0;
-            this.lblTitle.Text      = "  Cài đặt";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
+            lblTitle.BackColor = Color.FromArgb(45, 45, 48);
+            lblTitle.Dock = DockStyle.Top;
+            lblTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(0, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(426, 59);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "  Cài đặt";
+            lblTitle.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // lblQuality
-            this.lblQuality.AutoSize = true;
-            this.lblQuality.Location = new System.Drawing.Point(20, 62);
-            this.lblQuality.Name     = "lblQuality";
-            this.lblQuality.TabIndex = 1;
-            this.lblQuality.Text     = "Chất lượng ảnh (JPEG):";
-
+            // 
+            lblQuality.AutoSize = true;
+            lblQuality.Location = new Point(23, 83);
+            lblQuality.Name = "lblQuality";
+            lblQuality.Size = new Size(158, 20);
+            lblQuality.TabIndex = 1;
+            lblQuality.Text = "Chất lượng ảnh (JPEG):";
+            // 
             // cboQuality
-            this.cboQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboQuality.Items.AddRange(new object[] { "Thấp (40%)", "Trung bình (65%)", "Cao (85%)" });
-            this.cboQuality.Location      = new System.Drawing.Point(20, 80);
-            this.cboQuality.Name          = "cboQuality";
-            this.cboQuality.Size          = new System.Drawing.Size(200, 23);
-            this.cboQuality.TabIndex      = 2;
-            this.cboQuality.SelectedIndex = 1;
-
+            // 
+            cboQuality.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            cboQuality.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboQuality.Items.AddRange(new object[] { "Thấp (40%)", "Trung bình (65%)", "Cao (85%)" });
+            cboQuality.Location = new Point(23, 107);
+            cboQuality.Margin = new Padding(3, 4, 3, 4);
+            cboQuality.Name = "cboQuality";
+            cboQuality.Size = new Size(224, 28);
+            cboQuality.TabIndex = 2;
+            // 
             // lblQualityHint
-            this.lblQualityHint.AutoSize  = true;
-            this.lblQualityHint.ForeColor = System.Drawing.Color.Gray;
-            this.lblQualityHint.Location  = new System.Drawing.Point(20, 106);
-            this.lblQualityHint.Name      = "lblQualityHint";
-            this.lblQualityHint.TabIndex  = 3;
-            this.lblQualityHint.Text      = "Thấp = nhanh hơn, ít chi tiết. Cao = chậm hơn, rõ hơn.";
-
+            // 
+            lblQualityHint.AutoSize = true;
+            lblQualityHint.ForeColor = Color.Gray;
+            lblQualityHint.Location = new Point(23, 141);
+            lblQualityHint.Name = "lblQualityHint";
+            lblQualityHint.Size = new Size(363, 20);
+            lblQualityHint.TabIndex = 3;
+            lblQualityHint.Text = "Thấp = nhanh hơn, ít chi tiết. Cao = chậm hơn, rõ hơn.";
+            // 
             // lblFps
-            this.lblFps.AutoSize = true;
-            this.lblFps.Location = new System.Drawing.Point(20, 136);
-            this.lblFps.Name     = "lblFps";
-            this.lblFps.TabIndex = 4;
-            this.lblFps.Text     = "FPS mục tiêu:";
-
+            // 
+            lblFps.AutoSize = true;
+            lblFps.Location = new Point(23, 181);
+            lblFps.Name = "lblFps";
+            lblFps.Size = new Size(96, 20);
+            lblFps.TabIndex = 4;
+            lblFps.Text = "FPS mục tiêu:";
+            // 
             // trackFps
-            this.trackFps.Location    = new System.Drawing.Point(20, 154);
-            this.trackFps.Maximum     = 30;
-            this.trackFps.Minimum     = 5;
-            this.trackFps.Name        = "trackFps";
-            this.trackFps.Size        = new System.Drawing.Size(260, 45);
-            this.trackFps.TabIndex    = 5;
-            this.trackFps.TickFrequency = 5;
-            this.trackFps.Value       = 20;
-            this.trackFps.Scroll     += new System.EventHandler(this.TrackFps_Scroll);
-
+            // 
+            trackFps.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            trackFps.Location = new Point(23, 205);
+            trackFps.Margin = new Padding(3, 4, 3, 4);
+            trackFps.Maximum = 30;
+            trackFps.Minimum = 5;
+            trackFps.Name = "trackFps";
+            trackFps.Size = new Size(313, 56);
+            trackFps.TabIndex = 5;
+            trackFps.TickFrequency = 5;
+            trackFps.Value = 20;
+            trackFps.Scroll += TrackFps_Scroll;
+            // 
             // lblFpsValue
-            this.lblFpsValue.AutoSize  = true;
-            this.lblFpsValue.Font      = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblFpsValue.ForeColor = System.Drawing.Color.FromArgb(0, 122, 204);
-            this.lblFpsValue.Location  = new System.Drawing.Point(290, 162);
-            this.lblFpsValue.Name      = "lblFpsValue";
-            this.lblFpsValue.TabIndex  = 6;
-            this.lblFpsValue.Text      = "20 FPS";
-
+            // 
+            lblFpsValue.Anchor = AnchorStyles.Right;
+            lblFpsValue.AutoSize = true;
+            lblFpsValue.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblFpsValue.ForeColor = Color.FromArgb(0, 122, 204);
+            lblFpsValue.Location = new Point(347, 216);
+            lblFpsValue.Name = "lblFpsValue";
+            lblFpsValue.Size = new Size(64, 23);
+            lblFpsValue.TabIndex = 6;
+            lblFpsValue.Text = "20 FPS";
+            // 
             // lblPort
-            this.lblPort.AutoSize = true;
-            this.lblPort.Location = new System.Drawing.Point(20, 210);
-            this.lblPort.Name     = "lblPort";
-            this.lblPort.TabIndex = 7;
-            this.lblPort.Text     = "Port mặc định:";
-
+            // 
+            lblPort.AutoSize = true;
+            lblPort.Location = new Point(23, 280);
+            lblPort.Name = "lblPort";
+            lblPort.Size = new Size(103, 20);
+            lblPort.TabIndex = 7;
+            lblPort.Text = "Port mặc định:";
+            // 
             // txtPort
-            this.txtPort.Location  = new System.Drawing.Point(20, 228);
-            this.txtPort.Name      = "txtPort";
-            this.txtPort.Size      = new System.Drawing.Size(100, 23);
-            this.txtPort.TabIndex  = 8;
-            this.txtPort.Text      = "9000";
-
+            // 
+            txtPort.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            txtPort.Location = new Point(23, 304);
+            txtPort.Margin = new Padding(3, 4, 3, 4);
+            txtPort.Name = "txtPort";
+            txtPort.Size = new Size(131, 27);
+            txtPort.TabIndex = 8;
+            txtPort.Text = "9000";
+            // 
             // btnSave
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(0, 122, 204);
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location  = new System.Drawing.Point(168, 270);
-            this.btnSave.Name      = "btnSave";
-            this.btnSave.Size      = new System.Drawing.Size(86, 32);
-            this.btnSave.TabIndex  = 9;
-            this.btnSave.Text      = "Lưu";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click    += new System.EventHandler(this.BtnSave_Click);
-
+            // 
+            btnSave.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSave.BackColor = Color.FromArgb(0, 122, 204);
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(208, 360);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(98, 43);
+            btnSave.TabIndex = 9;
+            btnSave.Text = "Lưu";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += BtnSave_Click;
+            // 
             // btnCancel
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.FlatStyle    = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location     = new System.Drawing.Point(264, 270);
-            this.btnCancel.Name         = "btnCancel";
-            this.btnCancel.Size         = new System.Drawing.Size(76, 32);
-            this.btnCancel.TabIndex     = 10;
-            this.btnCancel.Text         = "Hủy";
-            this.btnCancel.Click       += new System.EventHandler(this.BtnCancel_Click);
-
+            // 
+            btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancel.DialogResult = DialogResult.Cancel;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Location = new Point(318, 360);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(87, 43);
+            btnCancel.TabIndex = 10;
+            btnCancel.Text = "Hủy";
+            btnCancel.Click += BtnCancel_Click;
+            // 
             // SettingsForm
-            this.AcceptButton        = this.btnSave;
-            this.CancelButton        = this.btnCancel;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode       = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize          = new System.Drawing.Size(360, 320);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblQuality);
-            this.Controls.Add(this.cboQuality);
-            this.Controls.Add(this.lblQualityHint);
-            this.Controls.Add(this.lblFps);
-            this.Controls.Add(this.trackFps);
-            this.Controls.Add(this.lblFpsValue);
-            this.Controls.Add(this.lblPort);
-            this.Controls.Add(this.txtPort);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-            this.FormBorderStyle     = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox         = false;
-            this.MinimizeBox         = false;
-            this.Name                = "SettingsForm";
-            this.StartPosition       = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text                = "Cài đặt";
-            ((System.ComponentModel.ISupportInitialize)(this.trackFps)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AcceptButton = btnSave;
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnCancel;
+            ClientSize = new Size(426, 427);
+            Controls.Add(lblTitle);
+            Controls.Add(lblQuality);
+            Controls.Add(cboQuality);
+            Controls.Add(lblQualityHint);
+            Controls.Add(lblFps);
+            Controls.Add(trackFps);
+            Controls.Add(lblFpsValue);
+            Controls.Add(lblPort);
+            Controls.Add(txtPort);
+            Controls.Add(btnSave);
+            Controls.Add(btnCancel);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "SettingsForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Cài đặt";
+            ((System.ComponentModel.ISupportInitialize)trackFps).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
         #endregion
 

@@ -12,9 +12,9 @@ namespace RemoteDesktop.Forms
     public partial class ConnectionForm : Form
     {
         // ── Properties trả về cho MainForm ───────────────────────────────
-        public string ServerIp       { get; private set; } = string.Empty;
-        public int    ServerPort     { get; private set; }
-        public string PasswordHash   { get; private set; } = string.Empty;
+        public string ServerIp { get; private set; } = string.Empty;
+        public int ServerPort { get; private set; }
+        public string PasswordHash { get; private set; } = string.Empty;
 
         public ConnectionForm()
         {
@@ -26,8 +26,8 @@ namespace RemoteDesktop.Forms
         {
             if (!ValidateInputs()) return;
 
-            ServerIp     = txtIp.Text.Trim();
-            ServerPort   = int.Parse(txtPort.Text.Trim());
+            ServerIp = txtIp.Text.Trim();
+            ServerPort = int.Parse(txtPort.Text.Trim());
             PasswordHash = HashPassword(txtPassword.Text);
 
             DialogResult = DialogResult.OK;
@@ -79,14 +79,19 @@ namespace RemoteDesktop.Forms
 
         private void ShowError(string message)
         {
-            lblError.Text    = message;
+            lblError.Text = message;
             lblError.Visible = true;
         }
 
         private void HideError()
         {
-            lblError.Text    = string.Empty;
+            lblError.Text = string.Empty;
             lblError.Visible = false;
+        }
+
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

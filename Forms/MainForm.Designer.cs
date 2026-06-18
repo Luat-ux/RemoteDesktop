@@ -15,155 +15,175 @@ namespace RemoteDesktop.Forms
 
         private void InitializeComponent()
         {
-            this.pictureBoxScreen    = new System.Windows.Forms.PictureBox();
-            this.panelToolbar        = new System.Windows.Forms.Panel();
-            this.btnConnect          = new System.Windows.Forms.Button();
-            this.btnDisconnect       = new System.Windows.Forms.Button();
-            this.btnSendFile         = new System.Windows.Forms.Button();
-            this.btnSettings         = new System.Windows.Forms.Button();
-            this.statusStrip         = new System.Windows.Forms.StatusStrip();
-            this.lblStatusConnection = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblStatusPing       = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblStatusFps        = new System.Windows.Forms.ToolStripStatusLabel();
-            this.separatorStatus     = new System.Windows.Forms.ToolStripSeparator();
-            this.separatorStatus2    = new System.Windows.Forms.ToolStripSeparator();
-
-            // ── pictureBoxScreen ────────────────────────────────────────────
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScreen)).BeginInit();
-            this.panelToolbar.SuspendLayout();
-            this.statusStrip.SuspendLayout();
-            this.SuspendLayout();
-
-            this.pictureBoxScreen.Anchor    = System.Windows.Forms.AnchorStyles.Top
-                                            | System.Windows.Forms.AnchorStyles.Bottom
-                                            | System.Windows.Forms.AnchorStyles.Left
-                                            | System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBoxScreen.BackColor = System.Drawing.Color.Black;
-            this.pictureBoxScreen.Location  = new System.Drawing.Point(0, 50);
-            this.pictureBoxScreen.Name      = "pictureBoxScreen";
-            this.pictureBoxScreen.Size      = new System.Drawing.Size(1200, 650);
-            this.pictureBoxScreen.SizeMode  = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxScreen.TabIndex  = 0;
-            this.pictureBoxScreen.TabStop   = false;
-            this.pictureBoxScreen.Cursor    = System.Windows.Forms.Cursors.Cross;
-            // Events wire-up ở file logic
-            this.pictureBoxScreen.MouseMove  += new System.Windows.Forms.MouseEventHandler(this.PictureBoxScreen_MouseMove);
-            this.pictureBoxScreen.MouseDown  += new System.Windows.Forms.MouseEventHandler(this.PictureBoxScreen_MouseDown);
-            this.pictureBoxScreen.MouseUp    += new System.Windows.Forms.MouseEventHandler(this.PictureBoxScreen_MouseUp);
-            this.pictureBoxScreen.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.PictureBoxScreen_MouseWheel);
-
-            // ── panelToolbar ────────────────────────────────────────────────
-            this.panelToolbar.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
-            this.panelToolbar.Controls.Add(this.btnConnect);
-            this.panelToolbar.Controls.Add(this.btnDisconnect);
-            this.panelToolbar.Controls.Add(this.btnSendFile);
-            this.panelToolbar.Controls.Add(this.btnSettings);
-            this.panelToolbar.Dock      = System.Windows.Forms.DockStyle.Top;
-            this.panelToolbar.Location  = new System.Drawing.Point(0, 0);
-            this.panelToolbar.Name      = "panelToolbar";
-            this.panelToolbar.Size      = new System.Drawing.Size(1200, 50);
-            this.panelToolbar.TabIndex  = 1;
-
-            // ── btnConnect ──────────────────────────────────────────────────
-            this.btnConnect.BackColor   = System.Drawing.Color.FromArgb(0, 122, 204);
-            this.btnConnect.FlatStyle   = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConnect.ForeColor   = System.Drawing.Color.White;
-            this.btnConnect.Location    = new System.Drawing.Point(12, 10);
-            this.btnConnect.Name        = "btnConnect";
-            this.btnConnect.Size        = new System.Drawing.Size(110, 30);
-            this.btnConnect.TabIndex    = 0;
-            this.btnConnect.Text        = "Kết nối";
-            this.btnConnect.UseVisualStyleBackColor = false;
-            this.btnConnect.Click      += new System.EventHandler(this.BtnConnect_Click);
-
-            // ── btnDisconnect ───────────────────────────────────────────────
-            this.btnDisconnect.BackColor  = System.Drawing.Color.FromArgb(200, 60, 60);
-            this.btnDisconnect.Enabled    = false;
-            this.btnDisconnect.FlatStyle  = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDisconnect.ForeColor  = System.Drawing.Color.White;
-            this.btnDisconnect.Location   = new System.Drawing.Point(134, 10);
-            this.btnDisconnect.Name       = "btnDisconnect";
-            this.btnDisconnect.Size       = new System.Drawing.Size(110, 30);
-            this.btnDisconnect.TabIndex   = 1;
-            this.btnDisconnect.Text       = "Ngắt kết nối";
-            this.btnDisconnect.UseVisualStyleBackColor = false;
-            this.btnDisconnect.Click     += new System.EventHandler(this.BtnDisconnect_Click);
-
-            // ── btnSendFile ─────────────────────────────────────────────────
-            this.btnSendFile.BackColor   = System.Drawing.Color.FromArgb(16, 124, 16);
-            this.btnSendFile.Enabled     = false;
-            this.btnSendFile.FlatStyle   = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSendFile.ForeColor   = System.Drawing.Color.White;
-            this.btnSendFile.Location    = new System.Drawing.Point(256, 10);
-            this.btnSendFile.Name        = "btnSendFile";
-            this.btnSendFile.Size        = new System.Drawing.Size(110, 30);
-            this.btnSendFile.TabIndex    = 2;
-            this.btnSendFile.Text        = "Gửi file";
-            this.btnSendFile.UseVisualStyleBackColor = false;
-            this.btnSendFile.Click      += new System.EventHandler(this.BtnSendFile_Click);
-
-            // ── btnSettings ─────────────────────────────────────────────────
-            this.btnSettings.BackColor   = System.Drawing.Color.FromArgb(80, 80, 80);
-            this.btnSettings.FlatStyle   = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.ForeColor   = System.Drawing.Color.White;
-            this.btnSettings.Location    = new System.Drawing.Point(378, 10);
-            this.btnSettings.Name        = "btnSettings";
-            this.btnSettings.Size        = new System.Drawing.Size(90, 30);
-            this.btnSettings.TabIndex    = 3;
-            this.btnSettings.Text        = "Cài đặt";
-            this.btnSettings.UseVisualStyleBackColor = false;
-            this.btnSettings.Click      += new System.EventHandler(this.BtnSettings_Click);
-
-            // ── statusStrip ─────────────────────────────────────────────────
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                this.lblStatusConnection,
-                this.separatorStatus,
-                this.lblStatusPing,
-                this.separatorStatus2,
-                this.lblStatusFps
-            });
-            this.statusStrip.Location   = new System.Drawing.Point(0, 728);
-            this.statusStrip.Name       = "statusStrip";
-            this.statusStrip.Size       = new System.Drawing.Size(1200, 22);
-            this.statusStrip.TabIndex   = 2;
-
-            this.lblStatusConnection.Name = "lblStatusConnection";
-            this.lblStatusConnection.Text = "Chưa kết nối";
-            this.lblStatusConnection.ForeColor = System.Drawing.Color.Gray;
-
-            this.separatorStatus.Name   = "separatorStatus";
-
-            this.lblStatusPing.Name     = "lblStatusPing";
-            this.lblStatusPing.Text     = "Ping: --";
-
-            this.separatorStatus2.Name  = "separatorStatus2";
-
-            this.lblStatusFps.Name      = "lblStatusFps";
-            this.lblStatusFps.Text      = "FPS: --";
-
-            // ── MainForm ────────────────────────────────────────────────────
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode       = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor           = System.Drawing.Color.FromArgb(30, 30, 30);
-            this.ClientSize          = new System.Drawing.Size(1200, 750);
-            this.Controls.Add(this.pictureBoxScreen);
-            this.Controls.Add(this.panelToolbar);
-            this.Controls.Add(this.statusStrip);
-            this.KeyPreview          = true;
-            this.MinimumSize         = new System.Drawing.Size(800, 500);
-            this.Name                = "MainForm";
-            this.Text                = "Remote Desktop Client";
-            this.WindowState         = System.Windows.Forms.FormWindowState.Maximized;
-            this.KeyDown            += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
-            this.KeyUp              += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
-            this.FormClosing        += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScreen)).EndInit();
-            this.panelToolbar.ResumeLayout(false);
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            pictureBoxScreen = new PictureBox();
+            panelToolbar = new Panel();
+            btnConnect = new Button();
+            btnDisconnect = new Button();
+            btnSendFile = new Button();
+            btnSettings = new Button();
+            statusStrip = new StatusStrip();
+            lblStatusConnection = new ToolStripStatusLabel();
+            separatorStatus = new ToolStripSeparator();
+            lblStatusPing = new ToolStripStatusLabel();
+            separatorStatus2 = new ToolStripSeparator();
+            lblStatusFps = new ToolStripStatusLabel();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxScreen).BeginInit();
+            panelToolbar.SuspendLayout();
+            statusStrip.SuspendLayout();
+            SuspendLayout();
+            // 
+            // pictureBoxScreen
+            // 
+            pictureBoxScreen.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBoxScreen.BackColor = Color.Black;
+            pictureBoxScreen.Cursor = Cursors.Cross;
+            pictureBoxScreen.Location = new Point(0, 67);
+            pictureBoxScreen.Margin = new Padding(3, 4, 3, 4);
+            pictureBoxScreen.Name = "pictureBoxScreen";
+            pictureBoxScreen.Size = new Size(1371, 867);
+            pictureBoxScreen.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxScreen.TabIndex = 0;
+            pictureBoxScreen.TabStop = false;
+            pictureBoxScreen.MouseDown += PictureBoxScreen_MouseDown;
+            pictureBoxScreen.MouseMove += PictureBoxScreen_MouseMove;
+            pictureBoxScreen.MouseUp += PictureBoxScreen_MouseUp;
+            pictureBoxScreen.MouseWheel += PictureBoxScreen_MouseWheel;
+            // 
+            // panelToolbar
+            // 
+            panelToolbar.BackColor = Color.FromArgb(45, 45, 48);
+            panelToolbar.Controls.Add(btnConnect);
+            panelToolbar.Controls.Add(btnDisconnect);
+            panelToolbar.Controls.Add(btnSendFile);
+            panelToolbar.Controls.Add(btnSettings);
+            panelToolbar.Dock = DockStyle.Top;
+            panelToolbar.Location = new Point(0, 0);
+            panelToolbar.Margin = new Padding(3, 4, 3, 4);
+            panelToolbar.Name = "panelToolbar";
+            panelToolbar.Size = new Size(1371, 72);
+            panelToolbar.TabIndex = 1;
+            // 
+            // btnConnect
+            // 
+            btnConnect.BackColor = Color.FromArgb(0, 122, 204);
+            btnConnect.FlatStyle = FlatStyle.Flat;
+            btnConnect.ForeColor = Color.White;
+            btnConnect.Location = new Point(14, 13);
+            btnConnect.Margin = new Padding(3, 4, 3, 4);
+            btnConnect.Name = "btnConnect";
+            btnConnect.Size = new Size(126, 40);
+            btnConnect.TabIndex = 0;
+            btnConnect.Text = "Kết nối";
+            btnConnect.UseVisualStyleBackColor = false;
+            btnConnect.Click += BtnConnect_Click;
+            // 
+            // btnDisconnect
+            // 
+            btnDisconnect.BackColor = Color.FromArgb(200, 60, 60);
+            btnDisconnect.Enabled = false;
+            btnDisconnect.FlatStyle = FlatStyle.Flat;
+            btnDisconnect.ForeColor = Color.White;
+            btnDisconnect.Location = new Point(153, 13);
+            btnDisconnect.Margin = new Padding(3, 4, 3, 4);
+            btnDisconnect.Name = "btnDisconnect";
+            btnDisconnect.Size = new Size(126, 40);
+            btnDisconnect.TabIndex = 1;
+            btnDisconnect.Text = "Ngắt kết nối";
+            btnDisconnect.UseVisualStyleBackColor = false;
+            btnDisconnect.Click += BtnDisconnect_Click;
+            // 
+            // btnSendFile
+            // 
+            btnSendFile.BackColor = Color.FromArgb(16, 124, 16);
+            btnSendFile.Enabled = false;
+            btnSendFile.FlatStyle = FlatStyle.Flat;
+            btnSendFile.ForeColor = Color.White;
+            btnSendFile.Location = new Point(293, 13);
+            btnSendFile.Margin = new Padding(3, 4, 3, 4);
+            btnSendFile.Name = "btnSendFile";
+            btnSendFile.Size = new Size(126, 40);
+            btnSendFile.TabIndex = 2;
+            btnSendFile.Text = "Gửi file";
+            btnSendFile.UseVisualStyleBackColor = false;
+            btnSendFile.Click += BtnSendFile_Click;
+            // 
+            // btnSettings
+            // 
+            btnSettings.BackColor = Color.FromArgb(80, 80, 80);
+            btnSettings.FlatStyle = FlatStyle.Flat;
+            btnSettings.ForeColor = Color.White;
+            btnSettings.Location = new Point(432, 13);
+            btnSettings.Margin = new Padding(3, 4, 3, 4);
+            btnSettings.Name = "btnSettings";
+            btnSettings.Size = new Size(103, 40);
+            btnSettings.TabIndex = 3;
+            btnSettings.Text = "Cài đặt";
+            btnSettings.UseVisualStyleBackColor = false;
+            btnSettings.Click += BtnSettings_Click;
+            // 
+            // statusStrip
+            // 
+            statusStrip.ImageScalingSize = new Size(20, 20);
+            statusStrip.Items.AddRange(new ToolStripItem[] { lblStatusConnection, separatorStatus, lblStatusPing, separatorStatus2, lblStatusFps });
+            statusStrip.Location = new Point(0, 974);
+            statusStrip.Name = "statusStrip";
+            statusStrip.Padding = new Padding(1, 0, 16, 0);
+            statusStrip.Size = new Size(1371, 26);
+            statusStrip.TabIndex = 2;
+            // 
+            // lblStatusConnection
+            // 
+            lblStatusConnection.ForeColor = Color.Gray;
+            lblStatusConnection.Name = "lblStatusConnection";
+            lblStatusConnection.Size = new Size(92, 20);
+            lblStatusConnection.Text = "Chưa kết nối";
+            // 
+            // separatorStatus
+            // 
+            separatorStatus.Name = "separatorStatus";
+            separatorStatus.Size = new Size(6, 26);
+            // 
+            // lblStatusPing
+            // 
+            lblStatusPing.Name = "lblStatusPing";
+            lblStatusPing.Size = new Size(57, 20);
+            lblStatusPing.Text = "Ping: --";
+            // 
+            // separatorStatus2
+            // 
+            separatorStatus2.Name = "separatorStatus2";
+            separatorStatus2.Size = new Size(6, 26);
+            // 
+            // lblStatusFps
+            // 
+            lblStatusFps.Name = "lblStatusFps";
+            lblStatusFps.Size = new Size(51, 20);
+            lblStatusFps.Text = "FPS: --";
+            // 
+            // MainForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(30, 30, 30);
+            ClientSize = new Size(1371, 1000);
+            Controls.Add(pictureBoxScreen);
+            Controls.Add(panelToolbar);
+            Controls.Add(statusStrip);
+            KeyPreview = true;
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(912, 651);
+            Name = "MainForm";
+            Text = "Remote Desktop Client";
+            WindowState = FormWindowState.Maximized;
+            FormClosing += MainForm_FormClosing;
+            KeyDown += MainForm_KeyDown;
+            KeyUp += MainForm_KeyUp;
+            ((System.ComponentModel.ISupportInitialize)pictureBoxScreen).EndInit();
+            panelToolbar.ResumeLayout(false);
+            statusStrip.ResumeLayout(false);
+            statusStrip.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

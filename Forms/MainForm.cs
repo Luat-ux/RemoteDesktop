@@ -16,7 +16,7 @@ namespace RemoteDesktop.Forms
         // ── Fields ────────────────────────────────────────────────────────
         private ConnectionService _connectionService = new();
         private bool _isConnected;
-        private System.Windows.Forms.Timer _frameTimer;
+        private System.Windows.Forms.Timer _frameTimer = null;
         private int _remoteScreenWidth;
         private int _remoteScreenHeight;
 

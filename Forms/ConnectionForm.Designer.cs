@@ -1,3 +1,4 @@
+
 namespace RemoteDesktop.Forms
 {
     partial class ConnectionForm
@@ -13,132 +14,158 @@ namespace RemoteDesktop.Forms
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
-            this.lblTitle       = new System.Windows.Forms.Label();
-            this.lblIp          = new System.Windows.Forms.Label();
-            this.txtIp          = new System.Windows.Forms.TextBox();
-            this.lblPort        = new System.Windows.Forms.Label();
-            this.txtPort        = new System.Windows.Forms.TextBox();
-            this.lblPassword    = new System.Windows.Forms.Label();
-            this.txtPassword    = new System.Windows.Forms.TextBox();
-            this.btnConnect     = new System.Windows.Forms.Button();
-            this.btnCancel      = new System.Windows.Forms.Button();
-            this.lblError       = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-
+            lblTitle = new Label();
+            lblIp = new Label();
+            txtIp = new TextBox();
+            lblPort = new Label();
+            txtPort = new TextBox();
+            lblPassword = new Label();
+            txtPassword = new TextBox();
+            btnConnect = new Button();
+            btnCancel = new Button();
+            lblError = new Label();
+            SuspendLayout();
+            // 
             // lblTitle
-            this.lblTitle.AutoSize  = false;
-            this.lblTitle.Dock      = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font      = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
-            this.lblTitle.Location  = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name      = "lblTitle";
-            this.lblTitle.Size      = new System.Drawing.Size(380, 48);
-            this.lblTitle.TabIndex  = 0;
-            this.lblTitle.Text      = "  Kết nối tới Server";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
+            lblTitle.BackColor = Color.FromArgb(45, 45, 48);
+            lblTitle.Dock = DockStyle.Top;
+            lblTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(0, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(473, 64);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "  Kết nối tới Server";
+            lblTitle.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // lblIp
-            this.lblIp.AutoSize  = true;
-            this.lblIp.Location  = new System.Drawing.Point(24, 72);
-            this.lblIp.Name      = "lblIp";
-            this.lblIp.Size      = new System.Drawing.Size(80, 15);
-            this.lblIp.TabIndex  = 1;
-            this.lblIp.Text      = "Địa chỉ IP:";
-
+            // 
+            lblIp.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblIp.AutoSize = true;
+            lblIp.Location = new Point(26, 76);
+            lblIp.Name = "lblIp";
+            lblIp.Size = new Size(74, 20);
+            lblIp.TabIndex = 1;
+            lblIp.Text = "Địa chỉ IP:";
+            //lblIp.Click += this.lblIp_Click;
+            // 
             // txtIp
-            this.txtIp.Location  = new System.Drawing.Point(24, 90);
-            this.txtIp.Name      = "txtIp";
-            this.txtIp.Size      = new System.Drawing.Size(230, 23);
-            this.txtIp.TabIndex  = 2;
-            this.txtIp.Text      = "192.168.1.";
-
+            // 
+            txtIp.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtIp.Location = new Point(27, 101);
+            txtIp.Margin = new Padding(3, 4, 3, 4);
+            txtIp.Name = "txtIp";
+            txtIp.Size = new Size(308, 27);
+            txtIp.TabIndex = 2;
+            txtIp.Text = "192.168.1.";
+            // 
             // lblPort
-            this.lblPort.AutoSize = true;
-            this.lblPort.Location = new System.Drawing.Point(268, 72);
-            this.lblPort.Name     = "lblPort";
-            this.lblPort.Size     = new System.Drawing.Size(30, 15);
-            this.lblPort.TabIndex = 3;
-            this.lblPort.Text     = "Port:";
-
+            // 
+            lblPort.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            lblPort.AutoSize = true;
+            lblPort.Location = new Point(372, 75);
+            lblPort.Name = "lblPort";
+            lblPort.Size = new Size(38, 20);
+            lblPort.TabIndex = 3;
+            lblPort.Text = "Port:";
+            // 
             // txtPort
-            this.txtPort.Location  = new System.Drawing.Point(268, 90);
-            this.txtPort.Name      = "txtPort";
-            this.txtPort.Size      = new System.Drawing.Size(88, 23);
-            this.txtPort.TabIndex  = 4;
-            this.txtPort.Text      = "9000";
-
+            // 
+            txtPort.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            txtPort.Location = new Point(373, 99);
+            txtPort.Margin = new Padding(3, 4, 3, 4);
+            txtPort.Name = "txtPort";
+            txtPort.Size = new Size(79, 27);
+            txtPort.TabIndex = 4;
+            txtPort.Text = "9000";
+            // 
             // lblPassword
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(24, 128);
-            this.lblPassword.Name     = "lblPassword";
-            this.lblPassword.Size     = new System.Drawing.Size(70, 15);
-            this.lblPassword.TabIndex = 5;
-            this.lblPassword.Text     = "Mật khẩu:";
-
+            // 
+            lblPassword.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblPassword.AutoSize = true;
+            lblPassword.Location = new Point(26, 151);
+            lblPassword.Name = "lblPassword";
+            lblPassword.Size = new Size(73, 20);
+            lblPassword.TabIndex = 5;
+            lblPassword.Text = "Mật khẩu:";
+            lblPassword.Click += lblPassword_Click;
+            // 
             // txtPassword
-            this.txtPassword.Location     = new System.Drawing.Point(24, 146);
-            this.txtPassword.Name         = "txtPassword";
-            this.txtPassword.PasswordChar = '●';
-            this.txtPassword.Size         = new System.Drawing.Size(332, 23);
-            this.txtPassword.TabIndex     = 6;
-
-            // lblError
-            this.lblError.AutoSize  = true;
-            this.lblError.ForeColor = System.Drawing.Color.Tomato;
-            this.lblError.Location  = new System.Drawing.Point(24, 182);
-            this.lblError.Name      = "lblError";
-            this.lblError.Size      = new System.Drawing.Size(0, 15);
-            this.lblError.TabIndex  = 7;
-            this.lblError.Text      = "";
-            this.lblError.Visible   = false;
-
+            // 
+            txtPassword.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtPassword.Location = new Point(27, 176);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '●';
+            txtPassword.Size = new Size(427, 27);
+            txtPassword.TabIndex = 6;
+            // 
             // btnConnect
-            this.btnConnect.BackColor = System.Drawing.Color.FromArgb(0, 122, 204);
-            this.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConnect.ForeColor = System.Drawing.Color.White;
-            this.btnConnect.Location  = new System.Drawing.Point(170, 210);
-            this.btnConnect.Name      = "btnConnect";
-            this.btnConnect.Size      = new System.Drawing.Size(90, 32);
-            this.btnConnect.TabIndex  = 8;
-            this.btnConnect.Text      = "Kết nối";
-            this.btnConnect.UseVisualStyleBackColor = false;
-            this.btnConnect.Click    += new System.EventHandler(this.BtnConnect_Click);
-
+            // 
+            btnConnect.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnConnect.BackColor = Color.FromArgb(0, 122, 204);
+            btnConnect.FlatStyle = FlatStyle.Flat;
+            btnConnect.ForeColor = Color.White;
+            btnConnect.Location = new Point(240, 246);
+            btnConnect.Margin = new Padding(3, 4, 3, 4);
+            btnConnect.Name = "btnConnect";
+            btnConnect.Size = new Size(103, 43);
+            btnConnect.TabIndex = 8;
+            btnConnect.Text = "Kết nối";
+            btnConnect.UseVisualStyleBackColor = false;
+            btnConnect.Click += BtnConnect_Click;
+            // 
             // btnCancel
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.FlatStyle    = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location     = new System.Drawing.Point(270, 210);
-            this.btnCancel.Name         = "btnCancel";
-            this.btnCancel.Size         = new System.Drawing.Size(86, 32);
-            this.btnCancel.TabIndex     = 9;
-            this.btnCancel.Text         = "Hủy";
-            this.btnCancel.Click       += new System.EventHandler(this.BtnCancel_Click);
-
+            // 
+            btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancel.DialogResult = DialogResult.Cancel;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Location = new Point(353, 246);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(98, 43);
+            btnCancel.TabIndex = 9;
+            btnCancel.Text = "Hủy";
+            btnCancel.Click += BtnCancel_Click;
+            // 
+            // lblError
+            // 
+            lblError.AutoSize = true;
+            lblError.ForeColor = Color.Tomato;
+            lblError.Location = new Point(27, 243);
+            lblError.Name = "lblError";
+            lblError.Size = new Size(0, 20);
+            lblError.TabIndex = 7;
+            lblError.Visible = false;
+            // 
             // ConnectionForm
-            this.AcceptButton        = this.btnConnect;
-            this.CancelButton        = this.btnCancel;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode       = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize          = new System.Drawing.Size(380, 260);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblIp);
-            this.Controls.Add(this.txtIp);
-            this.Controls.Add(this.lblPort);
-            this.Controls.Add(this.txtPort);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblError);
-            this.Controls.Add(this.btnConnect);
-            this.Controls.Add(this.btnCancel);
-            this.FormBorderStyle     = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox         = false;
-            this.MinimizeBox         = false;
-            this.Name                = "ConnectionForm";
-            this.StartPosition       = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text                = "Kết nối Remote Desktop";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AcceptButton = btnConnect;
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnCancel;
+            ClientSize = new Size(473, 313);
+            Controls.Add(lblTitle);
+            Controls.Add(lblIp);
+            Controls.Add(txtIp);
+            Controls.Add(lblPort);
+            Controls.Add(txtPort);
+            Controls.Add(lblPassword);
+            Controls.Add(txtPassword);
+            Controls.Add(lblError);
+            Controls.Add(btnConnect);
+            Controls.Add(btnCancel);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "ConnectionForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Kết nối Remote Desktop";
+            //Load += this.ConnectionForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
         #endregion
 

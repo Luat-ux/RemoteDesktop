@@ -13,128 +13,153 @@ namespace RemoteDesktop.Forms
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
-            this.lblTitle        = new System.Windows.Forms.Label();
-            this.lblFilePath     = new System.Windows.Forms.Label();
-            this.txtFilePath     = new System.Windows.Forms.TextBox();
-            this.btnChooseFile   = new System.Windows.Forms.Button();
-            this.lblProgress     = new System.Windows.Forms.Label();
-            this.progressBar     = new System.Windows.Forms.ProgressBar();
-            this.lblProgressText = new System.Windows.Forms.Label();
-            this.lblStatus       = new System.Windows.Forms.Label();
-            this.btnSend         = new System.Windows.Forms.Button();
-            this.btnCancel       = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-
+            lblTitle = new Label();
+            lblFilePath = new Label();
+            txtFilePath = new TextBox();
+            btnChooseFile = new Button();
+            lblProgress = new Label();
+            progressBar = new ProgressBar();
+            lblProgressText = new Label();
+            lblStatus = new Label();
+            btnSend = new Button();
+            btnCancel = new Button();
+            SuspendLayout();
+            // 
             // lblTitle
-            this.lblTitle.AutoSize  = false;
-            this.lblTitle.Dock      = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font      = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
-            this.lblTitle.Location  = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name      = "lblTitle";
-            this.lblTitle.Size      = new System.Drawing.Size(460, 44);
-            this.lblTitle.TabIndex  = 0;
-            this.lblTitle.Text      = "  Gửi file tới Server";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
+            lblTitle.BackColor = Color.FromArgb(45, 45, 48);
+            lblTitle.Dock = DockStyle.Top;
+            lblTitle.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(0, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(547, 59);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "  Gửi file tới Server";
+            lblTitle.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // lblFilePath
-            this.lblFilePath.AutoSize = true;
-            this.lblFilePath.Location = new System.Drawing.Point(20, 62);
-            this.lblFilePath.Name     = "lblFilePath";
-            this.lblFilePath.TabIndex = 1;
-            this.lblFilePath.Text     = "Chọn file cần gửi:";
-
+            // 
+            lblFilePath.AutoSize = true;
+            lblFilePath.Location = new Point(23, 83);
+            lblFilePath.Name = "lblFilePath";
+            lblFilePath.Size = new Size(124, 20);
+            lblFilePath.TabIndex = 1;
+            lblFilePath.Text = "Chọn file cần gửi:";
+            // 
             // txtFilePath
-            this.txtFilePath.Location  = new System.Drawing.Point(20, 80);
-            this.txtFilePath.Name      = "txtFilePath";
-            this.txtFilePath.ReadOnly  = true;
-            this.txtFilePath.Size      = new System.Drawing.Size(340, 23);
-            this.txtFilePath.TabIndex  = 2;
-
+            // 
+            txtFilePath.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtFilePath.Location = new Point(28, 105);
+            txtFilePath.Margin = new Padding(3, 4, 3, 4);
+            txtFilePath.Name = "txtFilePath";
+            txtFilePath.ReadOnly = true;
+            txtFilePath.Size = new Size(388, 27);
+            txtFilePath.TabIndex = 2;
+            // 
             // btnChooseFile
-            this.btnChooseFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChooseFile.Location  = new System.Drawing.Point(370, 79);
-            this.btnChooseFile.Name      = "btnChooseFile";
-            this.btnChooseFile.Size      = new System.Drawing.Size(72, 25);
-            this.btnChooseFile.TabIndex  = 3;
-            this.btnChooseFile.Text      = "Duyệt...";
-            this.btnChooseFile.Click    += new System.EventHandler(this.BtnChooseFile_Click);
-
+            // 
+            btnChooseFile.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnChooseFile.FlatStyle = FlatStyle.Flat;
+            btnChooseFile.Location = new Point(436, 101);
+            btnChooseFile.Margin = new Padding(3, 4, 3, 4);
+            btnChooseFile.Name = "btnChooseFile";
+            btnChooseFile.Size = new Size(90, 32);
+            btnChooseFile.TabIndex = 3;
+            btnChooseFile.Text = "Duyệt...";
+            btnChooseFile.Click += BtnChooseFile_Click;
+            // 
             // lblProgress
-            this.lblProgress.AutoSize = true;
-            this.lblProgress.Location = new System.Drawing.Point(20, 122);
-            this.lblProgress.Name     = "lblProgress";
-            this.lblProgress.TabIndex = 4;
-            this.lblProgress.Text     = "Tiến trình:";
-
+            // 
+            lblProgress.AutoSize = true;
+            lblProgress.Location = new Point(23, 163);
+            lblProgress.Name = "lblProgress";
+            lblProgress.Size = new Size(74, 20);
+            lblProgress.TabIndex = 4;
+            lblProgress.Text = "Tiến trình:";
+            // 
             // progressBar
-            this.progressBar.Location = new System.Drawing.Point(20, 140);
-            this.progressBar.Name     = "progressBar";
-            this.progressBar.Size     = new System.Drawing.Size(420, 22);
-            this.progressBar.TabIndex = 5;
-
-            // lblProgressText (hiển thị "X KB / Y KB")
-            this.lblProgressText.AutoSize  = true;
-            this.lblProgressText.ForeColor = System.Drawing.Color.Gray;
-            this.lblProgressText.Location  = new System.Drawing.Point(20, 168);
-            this.lblProgressText.Name      = "lblProgressText";
-            this.lblProgressText.TabIndex  = 6;
-            this.lblProgressText.Text      = "0 KB / 0 KB";
-
+            // 
+            progressBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            progressBar.Location = new Point(28, 187);
+            progressBar.Margin = new Padding(3, 4, 3, 4);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(496, 29);
+            progressBar.TabIndex = 5;
+            // 
+            // lblProgressText
+            // 
+            lblProgressText.AutoSize = true;
+            lblProgressText.ForeColor = Color.Gray;
+            lblProgressText.Location = new Point(23, 224);
+            lblProgressText.Name = "lblProgressText";
+            lblProgressText.Size = new Size(83, 20);
+            lblProgressText.TabIndex = 6;
+            lblProgressText.Text = "0 KB / 0 KB";
+            // 
             // lblStatus
-            this.lblStatus.AutoSize  = true;
-            this.lblStatus.ForeColor = System.Drawing.Color.Gray;
-            this.lblStatus.Location  = new System.Drawing.Point(20, 190);
-            this.lblStatus.Name      = "lblStatus";
-            this.lblStatus.TabIndex  = 7;
-            this.lblStatus.Text      = "Chưa chọn file.";
-
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.ForeColor = Color.Gray;
+            lblStatus.Location = new Point(23, 253);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(107, 20);
+            lblStatus.TabIndex = 7;
+            lblStatus.Text = "Chưa chọn file.";
+            // 
             // btnSend
-            this.btnSend.BackColor = System.Drawing.Color.FromArgb(16, 124, 16);
-            this.btnSend.Enabled   = false;
-            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSend.ForeColor = System.Drawing.Color.White;
-            this.btnSend.Location  = new System.Drawing.Point(260, 220);
-            this.btnSend.Name      = "btnSend";
-            this.btnSend.Size      = new System.Drawing.Size(86, 32);
-            this.btnSend.TabIndex  = 8;
-            this.btnSend.Text      = "Gửi file";
-            this.btnSend.UseVisualStyleBackColor = false;
-            this.btnSend.Click    += new System.EventHandler(this.BtnSend_Click);
-
+            // 
+            btnSend.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSend.BackColor = Color.FromArgb(16, 124, 16);
+            btnSend.Enabled = false;
+            btnSend.FlatStyle = FlatStyle.Flat;
+            btnSend.ForeColor = Color.White;
+            btnSend.Location = new Point(320, 288);
+            btnSend.Margin = new Padding(3, 4, 3, 4);
+            btnSend.Name = "btnSend";
+            btnSend.Size = new Size(96, 43);
+            btnSend.TabIndex = 8;
+            btnSend.Text = "Gửi file";
+            btnSend.UseVisualStyleBackColor = false;
+            btnSend.Click += BtnSend_Click;
+            // 
             // btnCancel
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location  = new System.Drawing.Point(356, 220);
-            this.btnCancel.Name      = "btnCancel";
-            this.btnCancel.Size      = new System.Drawing.Size(84, 32);
-            this.btnCancel.TabIndex  = 9;
-            this.btnCancel.Text      = "Đóng";
-            this.btnCancel.Click    += new System.EventHandler(this.BtnCancel_Click);
-
+            // 
+            btnCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Location = new Point(426, 288);
+            btnCancel.Margin = new Padding(3, 4, 3, 4);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(98, 43);
+            btnCancel.TabIndex = 9;
+            btnCancel.Text = "Đóng";
+            btnCancel.Click += BtnCancel_Click;
+            // 
             // FileTransferForm
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode       = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize          = new System.Drawing.Size(460, 270);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.lblFilePath);
-            this.Controls.Add(this.txtFilePath);
-            this.Controls.Add(this.btnChooseFile);
-            this.Controls.Add(this.lblProgress);
-            this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.lblProgressText);
-            this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.btnCancel);
-            this.FormBorderStyle     = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox         = false;
-            this.MinimizeBox         = false;
-            this.Name                = "FileTransferForm";
-            this.StartPosition       = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text                = "Gửi file";
-            this.FormClosing        += new System.Windows.Forms.FormClosingEventHandler(this.FileTransferForm_FormClosing);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(547, 355);
+            Controls.Add(lblTitle);
+            Controls.Add(lblFilePath);
+            Controls.Add(txtFilePath);
+            Controls.Add(btnChooseFile);
+            Controls.Add(lblProgress);
+            Controls.Add(progressBar);
+            Controls.Add(lblProgressText);
+            Controls.Add(lblStatus);
+            Controls.Add(btnSend);
+            Controls.Add(btnCancel);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FileTransferForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Gửi file";
+            FormClosing += FileTransferForm_FormClosing;
+            ResumeLayout(false);
+            PerformLayout();
         }
         #endregion
 
