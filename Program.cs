@@ -8,14 +8,13 @@ namespace RemoteDesktop
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Console.WriteLine("Test push GitHub thanh cong hahahahahaahahaha");
-
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            if (args.Length > 0 && args[0] == "server")
+                Application.Run(new ServerForm());
+            else
+                Application.Run(new MainForm());
         }
     }
 }

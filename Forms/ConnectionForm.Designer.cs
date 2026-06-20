@@ -48,7 +48,6 @@ namespace RemoteDesktop.Forms
             lblIp.Size = new Size(74, 20);
             lblIp.TabIndex = 1;
             lblIp.Text = "Địa chỉ IP:";
-            //lblIp.Click += this.lblIp_Click;
             // 
             // txtIp
             // 
@@ -146,9 +145,9 @@ namespace RemoteDesktop.Forms
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancel;
             ClientSize = new Size(473, 313);
+            Controls.Add(txtIp);
             Controls.Add(lblTitle);
             Controls.Add(lblIp);
-            Controls.Add(txtIp);
             Controls.Add(lblPort);
             Controls.Add(txtPort);
             Controls.Add(lblPassword);
@@ -163,7 +162,6 @@ namespace RemoteDesktop.Forms
             Name = "ConnectionForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Kết nối Remote Desktop";
-            //Load += this.ConnectionForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -16,21 +16,12 @@ namespace RemoteDesktop.Forms
         // ── Fields ────────────────────────────────────────────────────────
         private ConnectionService _connectionService = new();
         private bool _isConnected;
-        private System.Windows.Forms.Timer _frameTimer = null;
         private int _remoteScreenWidth;
         private int _remoteScreenHeight;
 
         public MainForm()
         {
             InitializeComponent();
-            InitializeFrameTimer();
-        }
-
-        private void InitializeFrameTimer()
-        {
-            _frameTimer = new System.Windows.Forms.Timer();
-            _frameTimer.Interval = 50;
-            _frameTimer.Tick += FrameTimer_Tick;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -59,15 +50,78 @@ namespace RemoteDesktop.Forms
         private void BtnSendFile_Click(object sender, EventArgs e)
         {
             if (!_isConnected) return;
-            // FileTransferForm dùng ConnectionService
             MessageBox.Show("Chức năng gửi file — kết nối với Linh để tích hợp.");
         }
 
         private void BtnSettings_Click(object sender, EventArgs e)
         {
             using var settingsForm = new SettingsForm();
-            if (settingsForm.ShowDialog() != DialogResult.OK) return;
-            _frameTimer.Interval = settingsForm.FrameIntervalMs;
+            settingsForm.ShowDialog();
+        }
+
+        // ── Nút "Chụp màn hình" — chụp 1 lần, hiện lên PictureBox VÀ lưu file ──
+        private async void BtnScreenshot_Click(object sender, EventArgs e)
+        {
+            if (!_isConnected) return;
+
+            btnScreenshot.Enabled = false;
+            btnScreenshot.Text = "Đang chụp...";
+
+            try
+            {
+                // send() — yêu cầu Server chụp đúng 1 lần
+                await _connectionService.SendPacketAsync(Protocol.REQUEST_FRAME, []);
+
+                // recv() — nhận ảnh JPEG vừa chụp
+                var (_, jpegBytes) = await _connectionService.ReceivePacketAsync();
+
+                if (jpegBytes.Length == 0)
+                {
+                    MessageBox.Show("Không nhận được ảnh từ Server.", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Hiện ảnh lên PictureBox để xem ngay trong app
+                Image screenImage = DecodeJpegFrame(jpegBytes);
+                UpdateScreenDisplay(screenImage);
+
+                // Lưu file ra ổ đĩa — đặt tên theo thời gian chụp
+                string savedPath = SaveScreenshotToDisk(jpegBytes);
+
+                MessageBox.Show(
+                    $"Đã chụp màn hình thành công!\n\nLưu tại:\n{savedPath}",
+                    "Chụp màn hình",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi chụp màn hình: {ex.Message}", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                btnScreenshot.Enabled = true;
+                btnScreenshot.Text = "📷 Chụp màn hình";
+            }
+        }
+
+        // ── Lưu byte[] JPEG ra file trong thư mục Pictures\RemoteDesktopCaptures ──
+        private static string SaveScreenshotToDisk(byte[] jpegBytes)
+        {
+            string folder = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
+                "RemoteDesktopCaptures");
+
+            Directory.CreateDirectory(folder);
+
+            string fileName = $"screenshot_{DateTime.Now:yyyyMMdd_HHmmss}.jpg";
+            string fullPath = Path.Combine(folder, fileName);
+
+            File.WriteAllBytes(fullPath, jpegBytes);
+
+            return fullPath;
         }
 
         // ── Kết nối — Task.Run bọc Socket.Connect() ──────────────────────
@@ -92,7 +146,6 @@ namespace RemoteDesktop.Forms
 
                 _isConnected = true;
                 SetConnectionStatus(isConnecting: false, isConnected: true);
-                _frameTimer.Start();
             }
             catch (Exception ex)
             {
@@ -119,35 +172,12 @@ namespace RemoteDesktop.Forms
         // ── Ngắt kết nối — close() ───────────────────────────────────────
         private async void DisconnectFromServer()
         {
-            _frameTimer.Stop();
             _isConnected = false;
 
             await _connectionService.DisconnectAsync();
 
             SetConnectionStatus(isConnected: false);
             UpdateScreenDisplay(null);
-        }
-
-        // ── Timer — send(REQUEST_FRAME) + recv(JPEG) liên tục ────────────
-        private async void FrameTimer_Tick(object? sender, EventArgs e)
-        {
-            if (!_isConnected) return;
-
-            try
-            {
-                // send() — yêu cầu frame mới
-                await _connectionService.SendPacketAsync(Protocol.REQUEST_FRAME, []);
-
-                // recv() — nhận JPEG bytes
-                var (_, jpegBytes) = await _connectionService.ReceivePacketAsync();
-
-                Image screenImage = DecodeJpegFrame(jpegBytes);
-                UpdateScreenDisplay(screenImage);
-            }
-            catch
-            {
-                Invoke(() => DisconnectFromServer());
-            }
         }
 
         // ── Decode JPEG → Image ──────────────────────────────────────────
@@ -281,6 +311,7 @@ namespace RemoteDesktop.Forms
                 btnConnect.Enabled = false;
                 btnDisconnect.Enabled = true;
                 btnSendFile.Enabled = true;
+                btnScreenshot.Enabled = true;
             }
             else
             {
@@ -291,7 +322,10 @@ namespace RemoteDesktop.Forms
                 btnConnect.Enabled = true;
                 btnDisconnect.Enabled = false;
                 btnSendFile.Enabled = false;
+                btnScreenshot.Enabled = false;
             }
         }
+
+
     }
 }

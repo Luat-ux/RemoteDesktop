@@ -20,6 +20,7 @@ namespace RemoteDesktop.Forms
             btnConnect = new Button();
             btnDisconnect = new Button();
             btnSendFile = new Button();
+            btnScreenshot = new Button();
             btnSettings = new Button();
             statusStrip = new StatusStrip();
             lblStatusConnection = new ToolStripStatusLabel();
@@ -31,9 +32,9 @@ namespace RemoteDesktop.Forms
             panelToolbar.SuspendLayout();
             statusStrip.SuspendLayout();
             SuspendLayout();
-            // 
+            //
             // pictureBoxScreen
-            // 
+            //
             pictureBoxScreen.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pictureBoxScreen.BackColor = Color.Black;
             pictureBoxScreen.Cursor = Cursors.Cross;
@@ -48,23 +49,24 @@ namespace RemoteDesktop.Forms
             pictureBoxScreen.MouseMove += PictureBoxScreen_MouseMove;
             pictureBoxScreen.MouseUp += PictureBoxScreen_MouseUp;
             pictureBoxScreen.MouseWheel += PictureBoxScreen_MouseWheel;
-            // 
+            //
             // panelToolbar
-            // 
+            //
             panelToolbar.BackColor = Color.FromArgb(45, 45, 48);
             panelToolbar.Controls.Add(btnConnect);
             panelToolbar.Controls.Add(btnDisconnect);
             panelToolbar.Controls.Add(btnSendFile);
+            panelToolbar.Controls.Add(btnScreenshot);
             panelToolbar.Controls.Add(btnSettings);
             panelToolbar.Dock = DockStyle.Top;
             panelToolbar.Location = new Point(0, 0);
             panelToolbar.Margin = new Padding(3, 4, 3, 4);
             panelToolbar.Name = "panelToolbar";
-            panelToolbar.Size = new Size(1371, 72);
+            panelToolbar.Size = new Size(1371, 67);
             panelToolbar.TabIndex = 1;
-            // 
+            //
             // btnConnect
-            // 
+            //
             btnConnect.BackColor = Color.FromArgb(0, 122, 204);
             btnConnect.FlatStyle = FlatStyle.Flat;
             btnConnect.ForeColor = Color.White;
@@ -76,9 +78,9 @@ namespace RemoteDesktop.Forms
             btnConnect.Text = "Kết nối";
             btnConnect.UseVisualStyleBackColor = false;
             btnConnect.Click += BtnConnect_Click;
-            // 
+            //
             // btnDisconnect
-            // 
+            //
             btnDisconnect.BackColor = Color.FromArgb(200, 60, 60);
             btnDisconnect.Enabled = false;
             btnDisconnect.FlatStyle = FlatStyle.Flat;
@@ -91,9 +93,9 @@ namespace RemoteDesktop.Forms
             btnDisconnect.Text = "Ngắt kết nối";
             btnDisconnect.UseVisualStyleBackColor = false;
             btnDisconnect.Click += BtnDisconnect_Click;
-            // 
+            //
             // btnSendFile
-            // 
+            //
             btnSendFile.BackColor = Color.FromArgb(16, 124, 16);
             btnSendFile.Enabled = false;
             btnSendFile.FlatStyle = FlatStyle.Flat;
@@ -106,72 +108,85 @@ namespace RemoteDesktop.Forms
             btnSendFile.Text = "Gửi file";
             btnSendFile.UseVisualStyleBackColor = false;
             btnSendFile.Click += BtnSendFile_Click;
-            // 
+            //
+            // btnScreenshot
+            //
+            btnScreenshot.BackColor = Color.FromArgb(150, 100, 200);
+            btnScreenshot.Enabled = false;
+            btnScreenshot.FlatStyle = FlatStyle.Flat;
+            btnScreenshot.ForeColor = Color.White;
+            btnScreenshot.Location = new Point(433, 13);
+            btnScreenshot.Margin = new Padding(3, 4, 3, 4);
+            btnScreenshot.Name = "btnScreenshot";
+            btnScreenshot.Size = new Size(160, 40);
+            btnScreenshot.TabIndex = 3;
+            btnScreenshot.Text = "📷 Chụp màn hình";
+            btnScreenshot.UseVisualStyleBackColor = false;
+            btnScreenshot.Click += BtnScreenshot_Click;
+            //
             // btnSettings
-            // 
+            //
             btnSettings.BackColor = Color.FromArgb(80, 80, 80);
             btnSettings.FlatStyle = FlatStyle.Flat;
             btnSettings.ForeColor = Color.White;
-            btnSettings.Location = new Point(432, 13);
+            btnSettings.Location = new Point(607, 13);
             btnSettings.Margin = new Padding(3, 4, 3, 4);
             btnSettings.Name = "btnSettings";
             btnSettings.Size = new Size(103, 40);
-            btnSettings.TabIndex = 3;
+            btnSettings.TabIndex = 4;
             btnSettings.Text = "Cài đặt";
             btnSettings.UseVisualStyleBackColor = false;
             btnSettings.Click += BtnSettings_Click;
-            // 
+            //
             // statusStrip
-            // 
-            statusStrip.ImageScalingSize = new Size(20, 20);
+            //
             statusStrip.Items.AddRange(new ToolStripItem[] { lblStatusConnection, separatorStatus, lblStatusPing, separatorStatus2, lblStatusFps });
-            statusStrip.Location = new Point(0, 974);
+            statusStrip.Location = new Point(0, 972);
             statusStrip.Name = "statusStrip";
-            statusStrip.Padding = new Padding(1, 0, 16, 0);
             statusStrip.Size = new Size(1371, 26);
             statusStrip.TabIndex = 2;
-            // 
+            //
             // lblStatusConnection
-            // 
+            //
             lblStatusConnection.ForeColor = Color.Gray;
             lblStatusConnection.Name = "lblStatusConnection";
-            lblStatusConnection.Size = new Size(92, 20);
+            lblStatusConnection.Size = new Size(82, 20);
             lblStatusConnection.Text = "Chưa kết nối";
-            // 
+            //
             // separatorStatus
-            // 
+            //
             separatorStatus.Name = "separatorStatus";
             separatorStatus.Size = new Size(6, 26);
-            // 
+            //
             // lblStatusPing
-            // 
+            //
             lblStatusPing.Name = "lblStatusPing";
-            lblStatusPing.Size = new Size(57, 20);
+            lblStatusPing.Size = new Size(56, 20);
             lblStatusPing.Text = "Ping: --";
-            // 
+            //
             // separatorStatus2
-            // 
+            //
             separatorStatus2.Name = "separatorStatus2";
             separatorStatus2.Size = new Size(6, 26);
-            // 
+            //
             // lblStatusFps
-            // 
+            //
             lblStatusFps.Name = "lblStatusFps";
-            lblStatusFps.Size = new Size(51, 20);
+            lblStatusFps.Size = new Size(50, 20);
             lblStatusFps.Text = "FPS: --";
-            // 
+            //
             // MainForm
-            // 
+            //
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(1371, 1000);
+            ClientSize = new Size(1371, 998);
             Controls.Add(pictureBoxScreen);
             Controls.Add(panelToolbar);
             Controls.Add(statusStrip);
             KeyPreview = true;
             Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(912, 651);
+            MinimumSize = new Size(914, 666);
             Name = "MainForm";
             Text = "Remote Desktop Client";
             WindowState = FormWindowState.Maximized;
@@ -188,18 +203,18 @@ namespace RemoteDesktop.Forms
 
         #endregion
 
-        // ── Controls khai báo ──────────────────────────────────────────────
-        private System.Windows.Forms.PictureBox         pictureBoxScreen;
-        private System.Windows.Forms.Panel              panelToolbar;
-        private System.Windows.Forms.Button             btnConnect;
-        private System.Windows.Forms.Button             btnDisconnect;
-        private System.Windows.Forms.Button             btnSendFile;
-        private System.Windows.Forms.Button             btnSettings;
-        private System.Windows.Forms.StatusStrip        statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel lblStatusConnection;
-        private System.Windows.Forms.ToolStripStatusLabel lblStatusPing;
-        private System.Windows.Forms.ToolStripStatusLabel lblStatusFps;
-        private System.Windows.Forms.ToolStripSeparator   separatorStatus;
-        private System.Windows.Forms.ToolStripSeparator   separatorStatus2;
+        private PictureBox pictureBoxScreen;
+        private Panel panelToolbar;
+        private Button btnConnect;
+        private Button btnDisconnect;
+        private Button btnSendFile;
+        private Button btnScreenshot;
+        private Button btnSettings;
+        private StatusStrip statusStrip;
+        private ToolStripStatusLabel lblStatusConnection;
+        private ToolStripSeparator separatorStatus;
+        private ToolStripStatusLabel lblStatusPing;
+        private ToolStripSeparator separatorStatus2;
+        private ToolStripStatusLabel lblStatusFps;
     }
 }
