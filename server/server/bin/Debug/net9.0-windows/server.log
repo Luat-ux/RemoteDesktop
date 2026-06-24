@@ -1,0 +1,19 @@
+[15:11:50] [INFO ] Tạo config mặc định — mật khẩu: 123456
+[15:11:50] [INFO ] Server khởi động. Mật khẩu mặc định: 123456
+[15:11:50] [INFO ] IP máy này: 10.79.65.226 — Port mặc định: 9000
+[15:12:09] [INFO ] Server đang lắng nghe trên port 9000...
+[15:13:55] [INFO ] Server đã dừng.
+[15:13:55] [INFO ] Server dừng lắng nghe (do người dùng bấm Dừng).
+[15:14:05] [INFO ] Server khởi động. Mật khẩu mặc định: 123456
+[15:14:05] [INFO ] IP máy này: 10.79.65.226 — Port mặc định: 9000
+[15:14:09] [INFO ] Server đang lắng nghe trên port 9000...
+[15:14:48] [INFO ] Chấp nhận kết nối từ: 10.79.65.226:63034
+[15:14:48] [INFO ] Client kết nối: 10.79.65.226:63034
+[15:14:48] [INFO ] Nhận hash từ client: 8D969EEF...
+[15:14:48] [INFO ] Client 10.79.65.226:63034 xác thực thành công.
+[15:14:53] [INFO ] Client 10.79.65.226:63034 yêu cầu chụp màn hình.
+[15:14:53] [INFO ] Đã gửi ảnh chụp màn hình tới 10.79.65.226:63034 (32 KB)
+[15:15:01] [INFO ] Client 10.79.65.226:63034 ngắt kết nối chủ động.
+[15:15:01] [INFO ] Client 10.79.65.226:63034 ngắt kết nối.
+[15:15:03] [INFO ] Server đã dừng.
+[15:15:03] [INFO ] Server dừng lắng nghe (do người dùng bấm Dừng).

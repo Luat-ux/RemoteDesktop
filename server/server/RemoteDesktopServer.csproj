@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWindowsCursor>true</UseWindowsCursor>
+		<AssemblyName>RemoteDesktopServer</AssemblyName>
+		<RootNamespace>RemoteDesktop</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Drawing.Common" Version="9.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Forms\ServerForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="Forms\ServerForm.Designer.cs">
+			<DependentUpon>ServerForm.cs</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>

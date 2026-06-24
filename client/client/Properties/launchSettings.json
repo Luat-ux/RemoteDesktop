@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "RemoteDesktopClient": {
+      "commandName": "Project"
+    }
+  }
+}

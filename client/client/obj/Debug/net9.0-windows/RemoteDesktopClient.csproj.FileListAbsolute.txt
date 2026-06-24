@@ -1,0 +1,16 @@
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\bin\Debug\net9.0-windows\RemoteDesktopClient.exe
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\bin\Debug\net9.0-windows\RemoteDesktopClient.deps.json
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\bin\Debug\net9.0-windows\RemoteDesktopClient.runtimeconfig.json
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\bin\Debug\net9.0-windows\RemoteDesktopClient.dll
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\bin\Debug\net9.0-windows\RemoteDesktopClient.pdb
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\obj\Debug\net9.0-windows\RemoteDesktop.Forms.MainForm.resources
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\obj\Debug\net9.0-windows\RemoteDesktopClient.csproj.GenerateResource.cache
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\obj\Debug\net9.0-windows\RemoteDesktopClient.GeneratedMSBuildEditorConfig.editorconfig
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\obj\Debug\net9.0-windows\RemoteDesktopClient.AssemblyInfoInputs.cache
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\obj\Debug\net9.0-windows\RemoteDesktopClient.AssemblyInfo.cs
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\obj\Debug\net9.0-windows\RemoteDesktopClient.csproj.CoreCompileInputs.cache
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\obj\Debug\net9.0-windows\RemoteDesktopClient.dll
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\obj\Debug\net9.0-windows\refint\RemoteDesktopClient.dll
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\obj\Debug\net9.0-windows\RemoteDesktopClient.pdb
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\obj\Debug\net9.0-windows\RemoteDesktopClient.genruntimeconfig.cache
+D:\RemoteDestopsDemo\DemoMangMayTinh\client\client\obj\Debug\net9.0-windows\ref\RemoteDesktopClient.dll
