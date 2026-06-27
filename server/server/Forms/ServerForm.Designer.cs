@@ -15,277 +15,400 @@ namespace RemoteDesktop.Forms
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.panelToolbar = new System.Windows.Forms.Panel();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
-            this.btnChangePass = new System.Windows.Forms.Button();
-            this.lblPortLabel = new System.Windows.Forms.Label();
-            this.txtPort = new System.Windows.Forms.TextBox();
-            this.panelInfo = new System.Windows.Forms.Panel();
-            this.lblStatusLabel = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.lblClientLabel = new System.Windows.Forms.Label();
-            this.lblClientCount = new System.Windows.Forms.Label();
-            this.lblIpLabel = new System.Windows.Forms.Label();
-            this.lblIpAddress = new System.Windows.Forms.Label();
-            this.lblPassLabel = new System.Windows.Forms.Label();
-            this.lblPassHint = new System.Windows.Forms.Label();
-            this.panelLog = new System.Windows.Forms.Panel();
-            this.lstLog = new System.Windows.Forms.ListBox();
-            this.btnClearLog = new System.Windows.Forms.Button();
-            this.panelToolbar.SuspendLayout();
-            this.panelInfo.SuspendLayout();
-            this.panelLog.SuspendLayout();
-            this.SuspendLayout();
-
-            // ────────────────────────────────────────────────────────────
+            panelToolbar = new Panel();
+            btnStart = new Button();
+            btnStop = new Button();
+            lblPortLabel = new Label();
+            txtPort = new TextBox();
+            btnChangePass = new Button();
+            panelInfo = new Panel();
+            panel5 = new Panel();
+            label4 = new Label();
+            panel6 = new Panel();
+            lblClientLabel = new Label();
+            lblClientCount = new Label();
+            panel3 = new Panel();
+            lblStatusLabel = new Label();
+            lblStatus = new Label();
+            panel2 = new Panel();
+            lblIpLabel = new Label();
+            lblIpAddress = new Label();
+            panel1 = new Panel();
+            panel4 = new Panel();
+            lblPassLabel = new Label();
+            lblPassHint = new Label();
+            panelLog = new Panel();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            lstLog = new ListBox();
+            btnClearLog = new Button();
+            panel5.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
+            panelLog.SuspendLayout();
+            SuspendLayout();
+            // 
             // panelToolbar
-            // ────────────────────────────────────────────────────────────
-            this.panelToolbar.BackColor = System.Drawing.Color.FromArgb(45, 45, 48);
-            this.panelToolbar.Controls.Add(this.btnStart);
-            this.panelToolbar.Controls.Add(this.btnStop);
-            this.panelToolbar.Controls.Add(this.lblPortLabel);
-            this.panelToolbar.Controls.Add(this.txtPort);
-            this.panelToolbar.Controls.Add(this.btnChangePass);
-            this.panelToolbar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelToolbar.Location = new System.Drawing.Point(0, 0);
-            this.panelToolbar.Name = "panelToolbar";
-            this.panelToolbar.Size = new System.Drawing.Size(700, 54);
-            this.panelToolbar.TabIndex = 0;
-
-            // ────────────────────────────────────────────────────────────
+            // 
+            panelToolbar.BackColor = Color.FromArgb(45, 45, 48);
+            panelToolbar.Location = new Point(0, 0);
+            panelToolbar.Margin = new Padding(3, 4, 3, 4);
+            panelToolbar.Name = "panelToolbar";
+            panelToolbar.Size = new Size(800, 96);
+            panelToolbar.TabIndex = 0;
+            // 
             // btnStart
-            // ────────────────────────────────────────────────────────────
-            this.btnStart.BackColor = System.Drawing.Color.FromArgb(16, 124, 16);
-            this.btnStart.FlatAppearance.BorderSize = 0;
-            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStart.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(12, 12);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(110, 30);
-            this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "▶  Khởi động";
-            this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
-
-            // ────────────────────────────────────────────────────────────
+            // 
+            btnStart.BackColor = Color.FromArgb(22, 101, 52);
+            btnStart.FlatAppearance.BorderSize = 0;
+            btnStart.FlatStyle = FlatStyle.Flat;
+            btnStart.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnStart.ForeColor = Color.White;
+            btnStart.Location = new Point(11, 528);
+            btnStart.Margin = new Padding(3, 4, 3, 4);
+            btnStart.Name = "btnStart";
+            btnStart.Size = new Size(150, 40);
+            btnStart.TabIndex = 0;
+            btnStart.Text = "▶  Khởi động";
+            btnStart.UseVisualStyleBackColor = false;
+            btnStart.Click += BtnStart_Click;
+            // 
             // btnStop
-            // ────────────────────────────────────────────────────────────
-            this.btnStop.BackColor = System.Drawing.Color.FromArgb(200, 60, 60);
-            this.btnStop.Enabled = false;
-            this.btnStop.FlatAppearance.BorderSize = 0;
-            this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStop.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnStop.ForeColor = System.Drawing.Color.White;
-            this.btnStop.Location = new System.Drawing.Point(134, 12);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(90, 30);
-            this.btnStop.TabIndex = 1;
-            this.btnStop.Text = "■  Dừng";
-            this.btnStop.UseVisualStyleBackColor = false;
-            this.btnStop.Click += new System.EventHandler(this.BtnStop_Click);
-
-            // ────────────────────────────────────────────────────────────
+            // 
+            btnStop.BackColor = Color.FromArgb(127, 29, 29);
+            btnStop.Enabled = false;
+            btnStop.FlatAppearance.BorderSize = 0;
+            btnStop.FlatStyle = FlatStyle.Flat;
+            btnStop.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnStop.ForeColor = Color.White;
+            btnStop.Location = new Point(11, 588);
+            btnStop.Margin = new Padding(3, 4, 3, 4);
+            btnStop.Name = "btnStop";
+            btnStop.Size = new Size(150, 40);
+            btnStop.TabIndex = 1;
+            btnStop.Text = "■  Dừng";
+            btnStop.UseVisualStyleBackColor = false;
+            btnStop.Click += BtnStop_Click;
+            // 
             // lblPortLabel
-            // ────────────────────────────────────────────────────────────
-            this.lblPortLabel.AutoSize = true;
-            this.lblPortLabel.ForeColor = System.Drawing.Color.LightGray;
-            this.lblPortLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblPortLabel.Location = new System.Drawing.Point(240, 19);
-            this.lblPortLabel.Name = "lblPortLabel";
-            this.lblPortLabel.Size = new System.Drawing.Size(29, 15);
-            this.lblPortLabel.TabIndex = 2;
-            this.lblPortLabel.Text = "Port:";
-
-            // ────────────────────────────────────────────────────────────
+            // 
+            lblPortLabel.AutoSize = true;
+            lblPortLabel.Font = new Font("Segoe UI", 9F);
+            lblPortLabel.ForeColor = Color.LightGray;
+            lblPortLabel.Location = new Point(12, 480);
+            lblPortLabel.Name = "lblPortLabel";
+            lblPortLabel.Size = new Size(38, 20);
+            lblPortLabel.TabIndex = 2;
+            lblPortLabel.Text = "Port:";
+            // 
             // txtPort
-            // ────────────────────────────────────────────────────────────
-            this.txtPort.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPort.Location = new System.Drawing.Point(276, 16);
-            this.txtPort.Name = "txtPort";
-            this.txtPort.Size = new System.Drawing.Size(60, 23);
-            this.txtPort.TabIndex = 3;
-            this.txtPort.Text = "9000";
-
-            // ────────────────────────────────────────────────────────────
+            // 
+            txtPort.Font = new Font("Segoe UI", 9F);
+            txtPort.Location = new Point(88, 477);
+            txtPort.Margin = new Padding(3, 4, 3, 4);
+            txtPort.Name = "txtPort";
+            txtPort.Size = new Size(68, 27);
+            txtPort.TabIndex = 3;
+            txtPort.Text = "9000";
+            // 
             // btnChangePass
-            // ────────────────────────────────────────────────────────────
-            this.btnChangePass.BackColor = System.Drawing.Color.FromArgb(80, 80, 80);
-            this.btnChangePass.FlatAppearance.BorderSize = 0;
-            this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePass.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChangePass.ForeColor = System.Drawing.Color.White;
-            this.btnChangePass.Location = new System.Drawing.Point(354, 12);
-            this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(120, 30);
-            this.btnChangePass.TabIndex = 4;
-            this.btnChangePass.Text = "🔑  Đổi mật khẩu";
-            this.btnChangePass.UseVisualStyleBackColor = false;
-            this.btnChangePass.Click += new System.EventHandler(this.BtnChangePass_Click);
-
-            // ────────────────────────────────────────────────────────────
+            // 
+            btnChangePass.BackColor = Color.FromArgb(80, 80, 80);
+            btnChangePass.FlatAppearance.BorderSize = 0;
+            btnChangePass.FlatStyle = FlatStyle.Flat;
+            btnChangePass.Font = new Font("Segoe UI", 9F);
+            btnChangePass.ForeColor = Color.White;
+            btnChangePass.Location = new Point(13, 646);
+            btnChangePass.Margin = new Padding(3, 4, 3, 4);
+            btnChangePass.Name = "btnChangePass";
+            btnChangePass.Size = new Size(150, 40);
+            btnChangePass.TabIndex = 4;
+            btnChangePass.Text = "🔑  Đổi mật khẩu";
+            btnChangePass.UseVisualStyleBackColor = false;
+            btnChangePass.Click += BtnChangePass_Click;
+            // 
             // panelInfo
-            // ────────────────────────────────────────────────────────────
-            this.panelInfo.BackColor = System.Drawing.Color.FromArgb(28, 28, 30);
-            this.panelInfo.Controls.Add(this.lblStatusLabel);
-            this.panelInfo.Controls.Add(this.lblStatus);
-            this.panelInfo.Controls.Add(this.lblClientLabel);
-            this.panelInfo.Controls.Add(this.lblClientCount);
-            this.panelInfo.Controls.Add(this.lblIpLabel);
-            this.panelInfo.Controls.Add(this.lblIpAddress);
-            this.panelInfo.Controls.Add(this.lblPassLabel);
-            this.panelInfo.Controls.Add(this.lblPassHint);
-            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInfo.Location = new System.Drawing.Point(0, 54);
-            this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(700, 76);
-            this.panelInfo.TabIndex = 1;
-
-            // lblStatusLabel
-            this.lblStatusLabel.AutoSize = true;
-            this.lblStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStatusLabel.ForeColor = System.Drawing.Color.White;
-            this.lblStatusLabel.Location = new System.Drawing.Point(16, 12);
-            this.lblStatusLabel.Name = "lblStatusLabel";
-            this.lblStatusLabel.Size = new System.Drawing.Size(63, 15);
-            this.lblStatusLabel.TabIndex = 0;
-            this.lblStatusLabel.Text = "Trạng thái:";
-
-            // lblStatus
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblStatus.ForeColor = System.Drawing.Color.Gray;
-            this.lblStatus.Location = new System.Drawing.Point(88, 12);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(60, 15);
-            this.lblStatus.TabIndex = 1;
-            this.lblStatus.Text = "Chưa chạy";
-
+            // 
+            panelInfo.BackColor = Color.FromArgb(28, 28, 30);
+            panelInfo.Location = new Point(0, 96);
+            panelInfo.Margin = new Padding(3, 4, 3, 4);
+            panelInfo.Name = "panelInfo";
+            panelInfo.Padding = new Padding(10);
+            panelInfo.Size = new Size(800, 96);
+            panelInfo.TabIndex = 1;
+            panelInfo.Paint += panelInfo_Paint;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(label4);
+            panel5.Controls.Add(panel6);
+            panel5.Controls.Add(lblClientLabel);
+            panel5.Controls.Add(lblClientCount);
+            panel5.Location = new Point(9, 199);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(198, 55);
+            panel5.TabIndex = 9;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.ForeColor = SystemColors.ButtonHighlight;
+            label4.Location = new Point(118, 20);
+            label4.Name = "label4";
+            label4.Size = new Size(17, 20);
+            label4.TabIndex = 4;
+            label4.Text = "0";
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(92, 90);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(193, 76);
+            panel6.TabIndex = 0;
+            // 
             // lblClientLabel
-            this.lblClientLabel.AutoSize = true;
-            this.lblClientLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblClientLabel.ForeColor = System.Drawing.Color.White;
-            this.lblClientLabel.Location = new System.Drawing.Point(240, 12);
-            this.lblClientLabel.Name = "lblClientLabel";
-            this.lblClientLabel.Size = new System.Drawing.Size(46, 15);
-            this.lblClientLabel.TabIndex = 2;
-            this.lblClientLabel.Text = "Clients:";
-
+            // 
+            lblClientLabel.AutoSize = true;
+            lblClientLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblClientLabel.ForeColor = Color.White;
+            lblClientLabel.Location = new Point(20, 21);
+            lblClientLabel.Name = "lblClientLabel";
+            lblClientLabel.Size = new Size(98, 20);
+            lblClientLabel.TabIndex = 2;
+            lblClientLabel.Text = "👥 CLIENTS:";
+            // 
             // lblClientCount
-            this.lblClientCount.AutoSize = true;
-            this.lblClientCount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblClientCount.ForeColor = System.Drawing.Color.Gray;
-            this.lblClientCount.Location = new System.Drawing.Point(292, 12);
-            this.lblClientCount.Name = "lblClientCount";
-            this.lblClientCount.Size = new System.Drawing.Size(13, 15);
-            this.lblClientCount.TabIndex = 3;
-            this.lblClientCount.Text = "0";
-
+            // 
+            lblClientCount.AutoSize = true;
+            lblClientCount.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblClientCount.ForeColor = Color.Gray;
+            lblClientCount.Location = new Point(103, 21);
+            lblClientCount.Name = "lblClientCount";
+            lblClientCount.Size = new Size(18, 20);
+            lblClientCount.TabIndex = 3;
+            lblClientCount.Text = "0";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(lblStatusLabel);
+            panel3.Controls.Add(lblStatus);
+            panel3.Location = new Point(9, 122);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(198, 57);
+            panel3.TabIndex = 10;
+            // 
+            // lblStatusLabel
+            // 
+            lblStatusLabel.AutoSize = true;
+            lblStatusLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblStatusLabel.ForeColor = Color.DarkGray;
+            lblStatusLabel.Location = new Point(7, 6);
+            lblStatusLabel.Name = "lblStatusLabel";
+            lblStatusLabel.Size = new Size(123, 20);
+            lblStatusLabel.TabIndex = 0;
+            lblStatusLabel.Text = "● TRẠNG THÁI :";
+            lblStatusLabel.Click += lblStatusLabel_Click_1;
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Font = new Font("Segoe UI", 9F);
+            lblStatus.ForeColor = Color.Transparent;
+            lblStatus.Location = new Point(10, 33);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(77, 20);
+            lblStatus.TabIndex = 1;
+            lblStatus.Text = "Chưa chạy";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(lblIpLabel);
+            panel2.Controls.Add(lblIpAddress);
+            panel2.Location = new Point(9, 273);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(198, 65);
+            panel2.TabIndex = 0;
+            panel2.Paint += panel2_Paint;
+            // 
             // lblIpLabel
-            this.lblIpLabel.AutoSize = true;
-            this.lblIpLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblIpLabel.ForeColor = System.Drawing.Color.White;
-            this.lblIpLabel.Location = new System.Drawing.Point(16, 42);
-            this.lblIpLabel.Name = "lblIpLabel";
-            this.lblIpLabel.Size = new System.Drawing.Size(66, 15);
-            this.lblIpLabel.TabIndex = 4;
-            this.lblIpLabel.Text = "IP máy này:";
-
+            // 
+            lblIpLabel.AutoSize = true;
+            lblIpLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblIpLabel.ForeColor = Color.White;
+            lblIpLabel.Location = new Point(18, 14);
+            lblIpLabel.Name = "lblIpLabel";
+            lblIpLabel.Size = new Size(121, 20);
+            lblIpLabel.TabIndex = 4;
+            lblIpLabel.Text = "🌐IP MÁY NÀY ";
+            lblIpLabel.Click += lblIpLabel_Click_1;
+            // 
             // lblIpAddress
-            this.lblIpAddress.AutoSize = true;
-            this.lblIpAddress.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblIpAddress.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblIpAddress.Location = new System.Drawing.Point(88, 42);
-            this.lblIpAddress.Name = "lblIpAddress";
-            this.lblIpAddress.Size = new System.Drawing.Size(16, 15);
-            this.lblIpAddress.TabIndex = 5;
-            this.lblIpAddress.Text = "...";
-
+            // 
+            lblIpAddress.AutoSize = true;
+            lblIpAddress.Font = new Font("Segoe UI", 9F);
+            lblIpAddress.ForeColor = Color.LightSkyBlue;
+            lblIpAddress.Location = new Point(23, 34);
+            lblIpAddress.Name = "lblIpAddress";
+            lblIpAddress.Size = new Size(18, 20);
+            lblIpAddress.TabIndex = 5;
+            lblIpAddress.Text = "...";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(lblPassLabel);
+            panel1.Controls.Add(lblPassHint);
+            panel1.Location = new Point(10, 359);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(197, 75);
+            panel1.TabIndex = 8;
+            panel1.Paint += panel1_Paint;
+            // 
+            // panel4
+            // 
+            panel4.Location = new Point(92, 90);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(193, 76);
+            panel4.TabIndex = 0;
+            // 
             // lblPassLabel
-            this.lblPassLabel.AutoSize = true;
-            this.lblPassLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblPassLabel.ForeColor = System.Drawing.Color.White;
-            this.lblPassLabel.Location = new System.Drawing.Point(240, 42);
-            this.lblPassLabel.Name = "lblPassLabel";
-            this.lblPassLabel.Size = new System.Drawing.Size(63, 15);
-            this.lblPassLabel.TabIndex = 6;
-            this.lblPassLabel.Text = "Mật khẩu:";
-
+            // 
+            lblPassLabel.AutoSize = true;
+            lblPassLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblPassLabel.ForeColor = Color.White;
+            lblPassLabel.Location = new Point(22, 20);
+            lblPassLabel.Name = "lblPassLabel";
+            lblPassLabel.Size = new Size(112, 20);
+            lblPassLabel.TabIndex = 6;
+            lblPassLabel.Text = "🔐MẬT KHẨU";
+            lblPassLabel.Click += lblPassLabel_Click;
+            // 
             // lblPassHint
-            this.lblPassHint.AutoSize = true;
-            this.lblPassHint.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblPassHint.ForeColor = System.Drawing.Color.DarkGray;
-            this.lblPassHint.Location = new System.Drawing.Point(310, 42);
-            this.lblPassHint.Name = "lblPassHint";
-            this.lblPassHint.Size = new System.Drawing.Size(148, 15);
-            this.lblPassHint.TabIndex = 7;
-            this.lblPassHint.Text = "(xem server_config.json)";
-
-            // ────────────────────────────────────────────────────────────
-            // panelLog  (chứa lstLog + btnClearLog)
-            // ────────────────────────────────────────────────────────────
-            this.panelLog.Controls.Add(this.lstLog);
-            this.panelLog.Controls.Add(this.btnClearLog);
-            this.panelLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLog.Location = new System.Drawing.Point(0, 130);
-            this.panelLog.Name = "panelLog";
-            this.panelLog.Size = new System.Drawing.Size(700, 420);
-            this.panelLog.TabIndex = 2;
-
-            // ────────────────────────────────────────────────────────────
+            // 
+            lblPassHint.AutoSize = true;
+            lblPassHint.Font = new Font("Segoe UI", 9F);
+            lblPassHint.ForeColor = Color.DarkGray;
+            lblPassHint.Location = new Point(17, 43);
+            lblPassHint.Name = "lblPassHint";
+            lblPassHint.Size = new Size(168, 20);
+            lblPassHint.TabIndex = 7;
+            lblPassHint.Text = "(xem server_config.json)";
+            lblPassHint.Click += lblPassHint_Click;
+            // 
+            // panelLog
+            // 
+            panelLog.Controls.Add(label3);
+            panelLog.Controls.Add(label2);
+            panelLog.Controls.Add(label1);
+            panelLog.Controls.Add(panel1);
+            panelLog.Controls.Add(panel5);
+            panelLog.Controls.Add(btnChangePass);
+            panelLog.Controls.Add(panel2);
+            panelLog.Controls.Add(panel3);
+            panelLog.Controls.Add(txtPort);
+            panelLog.Controls.Add(lblPortLabel);
+            panelLog.Controls.Add(btnStop);
+            panelLog.Controls.Add(btnStart);
+            panelLog.Controls.Add(lstLog);
+            panelLog.Controls.Add(btnClearLog);
+            panelLog.Dock = DockStyle.Fill;
+            panelLog.Location = new Point(0, 0);
+            panelLog.Margin = new Padding(3, 4, 3, 4);
+            panelLog.Name = "panelLog";
+            panelLog.Size = new Size(800, 733);
+            panelLog.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(254, 82);
+            label3.Name = "label3";
+            label3.Size = new Size(172, 28);
+            label3.TabIndex = 13;
+            label3.Text = "Nhật kí hoạt động";
+            label3.Click += label3_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(152, 21);
+            label2.Name = "label2";
+            label2.Size = new Size(518, 50);
+            label2.TabIndex = 12;
+            label2.Text = "🖥REMOTE DESKTOP SERVER ";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ButtonHighlight;
+            label1.Location = new Point(13, 82);
+            label1.Name = "label1";
+            label1.Size = new Size(187, 28);
+            label1.TabIndex = 11;
+            label1.Text = "THÔNG TIN SERVER";
+            // 
             // lstLog
-            // ────────────────────────────────────────────────────────────
-            this.lstLog.BackColor = System.Drawing.Color.FromArgb(18, 18, 18);
-            this.lstLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstLog.Font = new System.Drawing.Font("Consolas", 9F);
-            this.lstLog.ForeColor = System.Drawing.Color.LightGreen;
-            this.lstLog.Location = new System.Drawing.Point(0, 0);
-            this.lstLog.Name = "lstLog";
-            this.lstLog.Size = new System.Drawing.Size(700, 394);
-            this.lstLog.TabIndex = 0;
-
-            // ────────────────────────────────────────────────────────────
+            // 
+            lstLog.BackColor = Color.FromArgb(18, 18, 18);
+            lstLog.BorderStyle = BorderStyle.None;
+            lstLog.Font = new Font("Consolas", 9F);
+            lstLog.ForeColor = Color.LightGreen;
+            lstLog.Location = new Point(224, 123);
+            lstLog.Margin = new Padding(3, 4, 3, 4);
+            lstLog.Name = "lstLog";
+            lstLog.Size = new Size(576, 522);
+            lstLog.TabIndex = 0;
+            lstLog.SelectedIndexChanged += lstLog_SelectedIndexChanged;
+            // 
             // btnClearLog
-            // ────────────────────────────────────────────────────────────
-            this.btnClearLog.BackColor = System.Drawing.Color.FromArgb(35, 35, 35);
-            this.btnClearLog.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnClearLog.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(60, 60, 60);
-            this.btnClearLog.FlatAppearance.BorderSize = 1;
-            this.btnClearLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearLog.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.btnClearLog.ForeColor = System.Drawing.Color.Gray;
-            this.btnClearLog.Location = new System.Drawing.Point(0, 394);
-            this.btnClearLog.Name = "btnClearLog";
-            this.btnClearLog.Size = new System.Drawing.Size(700, 26);
-            this.btnClearLog.TabIndex = 1;
-            this.btnClearLog.Text = "Xóa log";
-            this.btnClearLog.UseVisualStyleBackColor = false;
-            this.btnClearLog.Click += new System.EventHandler(this.BtnClearLog_Click);
-
-            // ────────────────────────────────────────────────────────────
+            // 
+            btnClearLog.BackColor = Color.FromArgb(35, 35, 35);
+            btnClearLog.FlatAppearance.BorderColor = Color.FromArgb(60, 60, 60);
+            btnClearLog.FlatStyle = FlatStyle.Flat;
+            btnClearLog.Font = new Font("Segoe UI", 8.5F);
+            btnClearLog.ForeColor = Color.Gray;
+            btnClearLog.Location = new Point(224, 652);
+            btnClearLog.Margin = new Padding(3, 4, 3, 4);
+            btnClearLog.Name = "btnClearLog";
+            btnClearLog.Size = new Size(576, 77);
+            btnClearLog.TabIndex = 1;
+            btnClearLog.Text = "Xóa log";
+            btnClearLog.UseVisualStyleBackColor = false;
+            btnClearLog.Click += BtnClearLog_Click;
+            // 
             // ServerForm
-            // ────────────────────────────────────────────────────────────
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(28, 28, 30);
-            this.ClientSize = new System.Drawing.Size(700, 550);
-            this.Controls.Add(this.panelLog);
-            this.Controls.Add(this.panelInfo);
-            this.Controls.Add(this.panelToolbar);
-            this.MinimumSize = new System.Drawing.Size(560, 420);
-            this.Name = "ServerForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Remote Desktop — Server";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ServerForm_FormClosing);
-            this.panelToolbar.ResumeLayout(false);
-            this.panelToolbar.PerformLayout();
-            this.panelInfo.ResumeLayout(false);
-            this.panelInfo.PerformLayout();
-            this.panelLog.ResumeLayout(false);
-            this.ResumeLayout(false);
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(26, 29, 35);
+            ClientSize = new Size(800, 733);
+            Controls.Add(panelLog);
+            Controls.Add(panelInfo);
+            Controls.Add(panelToolbar);
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(637, 544);
+            Name = "ServerForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Remote Desktop — Server";
+            FormClosing += ServerForm_FormClosing;
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panelLog.ResumeLayout(false);
+            panelLog.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -309,5 +432,15 @@ namespace RemoteDesktop.Forms
         private System.Windows.Forms.Panel panelLog;
         private System.Windows.Forms.ListBox lstLog;
         private System.Windows.Forms.Button btnClearLog;
+        private Panel panel3;
+        private Panel panel2;
+        private Panel panel1;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel6;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private Label label4;
     }
 }
