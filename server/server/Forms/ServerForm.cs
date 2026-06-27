@@ -6,8 +6,8 @@ namespace RemoteDesktop.Forms
 {
     public partial class ServerForm : Form
     {
-        private TcpServer?    _tcpServer;
-        private ServerConfig  _config = null!;
+        private TcpServer? _tcpServer;
+        private ServerConfig _config = null!;
 
         public ServerForm()
         {
@@ -21,7 +21,7 @@ namespace RemoteDesktop.Forms
         // ── Khởi tạo dữ liệu hiển thị ────────────────────────────────────
         private void LoadInitialData()
         {
-            _config          = ConfigManager.LoadConfig();
+            _config = ConfigManager.LoadConfig();
             lblIpAddress.Text = GetLocalIpAddress();
             Logger.Info("Server khởi động. Mật khẩu mặc định: 123456");
             Logger.Info($"IP máy này: {GetLocalIpAddress()} — Port mặc định: 9000");
@@ -37,30 +37,30 @@ namespace RemoteDesktop.Forms
                 return;
             }
 
-            _config    = ConfigManager.LoadConfig();
+            _config = ConfigManager.LoadConfig();
             _tcpServer = new TcpServer(_config);
 
-            _tcpServer.OnClientConnected    += addr => Invoke(() =>
+            _tcpServer.OnClientConnected += addr => Invoke(() =>
             {
-                lblClientCount.Text      = _tcpServer.ConnectedClientCount.ToString();
+                lblClientCount.Text = _tcpServer.ConnectedClientCount.ToString();
                 lblClientCount.ForeColor = System.Drawing.Color.LimeGreen;
             });
             _tcpServer.OnClientDisconnected += addr => Invoke(() =>
             {
-                lblClientCount.Text      = _tcpServer.ConnectedClientCount.ToString();
+                lblClientCount.Text = _tcpServer.ConnectedClientCount.ToString();
                 lblClientCount.ForeColor = _tcpServer.ConnectedClientCount > 0
                     ? System.Drawing.Color.LimeGreen : System.Drawing.Color.Gray;
             });
             _tcpServer.OnStatusChanged += status => Invoke(() =>
             {
-                lblStatus.Text      = status;
+                lblStatus.Text = status;
                 lblStatus.ForeColor = status.Contains("chạy") || status.Contains("Port")
                     ? System.Drawing.Color.LimeGreen : System.Drawing.Color.Gray;
             });
 
             btnStart.Enabled = false;
-            btnStop.Enabled  = true;
-            txtPort.Enabled  = false;
+            btnStop.Enabled = true;
+            txtPort.Enabled = false;
 
             try
             {
@@ -124,9 +124,9 @@ namespace RemoteDesktop.Forms
 
         private void ResetServerState()
         {
-            btnStart.Enabled    = true;
-            btnStop.Enabled     = false;
-            txtPort.Enabled     = true;
+            btnStart.Enabled = true;
+            btnStop.Enabled = false;
+            txtPort.Enabled = true;
             lblClientCount.Text = "0";
         }
 
@@ -135,12 +135,72 @@ namespace RemoteDesktop.Forms
         {
             try
             {
-                var host    = Dns.GetHostEntry(Dns.GetHostName());
+                var host = Dns.GetHostEntry(Dns.GetHostName());
                 var localIp = host.AddressList
                     .FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork);
                 return localIp?.ToString() ?? "Không xác định";
             }
             catch { return "Không xác định"; }
+        }
+
+        private void panelInfo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIpLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStatusLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblPassHint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIpLabel_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblStatusLabel_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPassLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstLog_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
